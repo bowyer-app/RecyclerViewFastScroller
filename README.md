@@ -29,7 +29,7 @@ The best way to check everything out is to peruse the example code and run the s
 
 ```java
 ...
-  <android.support.v7.widget.RecyclerView
+  <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/recyclerView"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
