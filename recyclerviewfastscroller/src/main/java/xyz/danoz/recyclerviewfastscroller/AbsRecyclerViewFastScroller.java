@@ -7,16 +7,16 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.OnScrollListener;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.SectionIndexer;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 import xyz.danoz.recyclerviewfastscroller.calculation.progress.ScrollProgressCalculator;
 import xyz.danoz.recyclerviewfastscroller.calculation.progress.TouchableScrollProgressCalculator;
@@ -44,8 +44,8 @@ public abstract class AbsRecyclerViewFastScroller extends FrameLayout implements
     private SectionIndicator mSectionIndicator;
 
     /** If I had my druthers, AbsRecyclerViewFastScroller would implement this as an interface, but Android has made
-     * {@link OnScrollListener} an abstract class instead of an interface. Hmmm */
-    protected OnScrollListener mOnScrollListener;
+     * {@link RecyclerView.OnScrollListener} an abstract class instead of an interface. Hmmm */
+    protected RecyclerView.OnScrollListener mOnScrollListener;
 
     public AbsRecyclerViewFastScroller(Context context) {
         this(context, null, 0);
@@ -177,9 +177,9 @@ public abstract class AbsRecyclerViewFastScroller extends FrameLayout implements
      * @return an implementation for responding to scroll events from the {@link #mRecyclerView}
      */
     @NonNull
-    public OnScrollListener getOnScrollListener() {
+    public RecyclerView.OnScrollListener getOnScrollListener() {
         if (mOnScrollListener == null) {
-            mOnScrollListener = new OnScrollListener() {
+            mOnScrollListener = new RecyclerView.OnScrollListener() {
                 @Override
                 public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                     float scrollProgress = 0;

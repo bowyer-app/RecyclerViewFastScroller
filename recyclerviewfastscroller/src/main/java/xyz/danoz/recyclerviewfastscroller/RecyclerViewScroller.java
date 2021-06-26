@@ -1,7 +1,7 @@
 package xyz.danoz.recyclerviewfastscroller;
 
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.OnScrollListener;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * To be implemented by any object that scrolls a {@link RecyclerView}
@@ -15,7 +15,7 @@ public interface RecyclerViewScroller {
     public void setRecyclerView(RecyclerView recyclerView);
 
     /**
-     * Since {@link OnScrollListener} is not implemented as an interface, RecyclerViewScrollers cannot implement this
+     * Since {@link RecyclerView.OnScrollListener} is not implemented as an interface, RecyclerViewScrollers cannot implement this
      * interface, and in most cases, it makes no sense for them to extend a scroll listener. For this reason, we must
      * provide a listener that is intended to be fetched and set as a listener on a {@link RecyclerView}.
      *
@@ -23,7 +23,7 @@ public interface RecyclerViewScroller {
      *
      * @return this scroller's listener for a RecyclerView's scrolling.
      */
-    public OnScrollListener getOnScrollListener();
+    public RecyclerView.OnScrollListener getOnScrollListener();
 
     /**
      * Indicate to the scroller that it should scroll to a certain amount of scroll progress
