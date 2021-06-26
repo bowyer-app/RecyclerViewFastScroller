@@ -12,9 +12,9 @@ As of [`b3e2d2f`](https://github.com/danoz73/RecyclerViewFastScroller/commit/b3e
 
 ### Download
 
-You can grab the current version of the library from maven central
+You can download from release tag
 ```java
-compile 'xyz.danoz:recyclerviewfastscroller:0.1.3'
+https://github.com/bowyer-app/RecyclerViewFastScroller/releases/tag/0.2.0
 ```
 
 ### Usage
